@@ -2,13 +2,14 @@ package com.tech;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class DummyTest {
+public class DummyAndroidTest {
     private static String serverUrl = "http://localhost:4723/wd/hub";
     private static AppiumDriver<MobileElement> driver;
 
@@ -25,7 +26,7 @@ public class DummyTest {
         URL appiumServerUrl = new URL(serverUrl);// Appium Server URL;
 
         //Send these desire capabilities to Appium Server
-        driver = new AppiumDriver<MobileElement>(appiumServerUrl, capabilities);
+        driver = new AndroidDriver<MobileElement>(appiumServerUrl, capabilities);
 
         System.out.println("Connected With Appium Server.");
     }
